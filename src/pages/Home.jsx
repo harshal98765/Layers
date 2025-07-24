@@ -1,5 +1,5 @@
 "use client"
-import "../styles/Home.css"
+import "../styles/home.css"
 import { useEffect, useState, useRef } from "react"
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValue } from "framer-motion"
 import { Search, User, ShoppingCart, Menu, X } from "lucide-react"
