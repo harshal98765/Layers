@@ -9,7 +9,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import "../styles/ScrollWatch.css";
-import v1 from "../assets/v1.mp4";
+import v1 from "../assets/v1.webm";
 import v2 from "../assets/v2.webm";
 import v3 from "../assets/v3.webm";
 

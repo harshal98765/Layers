@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/SmartwatchShowcase.css'; // Assuming you have a CSS file for styles
-import v1 from '../assets/v1.mp4';
+import v1 from '../assets/v1.webm';
 import v2 from '../assets/v2.webm';
 import v3 from '../assets/v3.webm';
 
