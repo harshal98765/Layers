@@ -1,0 +1,128 @@
+/* src/components/ImageSlider.css */
+.slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #eaeaea;
+  min-height: 100vh;
+  /* overflow-x: hidden; */
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section .container h3 {
+  margin: 0 0 25px 0;
+}
+
+@media (max-width: 992px) {
+  section {
+    padding: 0 20px;
+  }
+}
+
+.slide-option {
+  margin-bottom: 50px;
+}
+
+.highway-slider {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+}
+
+.highway-barrier {
+  overflow: hidden;
+  position: relative;
+}
+
+.highway-lane {
+  display: flex;
+  height: 100%;
+}
+
+.highway-car {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  color: #343434;
+}
+
+.highway-car img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Start to finish infinite animation */
+@keyframes translatestf {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-500%); }
+}
+
+#stffull .highway-lane {
+  width: 500%;
+}
+
+#stffull .highway-car {
+  animation: translatestf 30s linear infinite;
+}
+
+/* Closed infinite loop animation */
+@keyframes translateinfinite {
+  100% { transform: translateX(calc(-180px * 5)); }
+}
+
+#infinite .highway-barrier {
+  background: #fff;
+  box-shadow: 0 3px 10px -3px rgba(0, 0, 0, 0.3);
+}
+
+#infinite .highway-barrier::before,
+#infinite .highway-barrier::after {
+  content: " ";
+  position: absolute;
+  z-index: 9;
+  width: 180px;
+  height: 100%;
+}
+
+#infinite .highway-barrier::before {
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+#infinite .highway-barrier::after {
+  top: 0;
+  right: 0;
+  background: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+#infinite .highway-lane {
+  width: calc(180px * 10);
+}
+
+#infinite .highway-car {
+  width: 180px;
+  animation: translateinfinite 25s linear infinite;
+}
+
+#infinite .highway-car img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Optional colorful background ids */
+#red { background: #cb5454; }
+#orange { background: #cb8054; }
+#yellow { background: #cbba54; }
+#green { background: #69b46e; }
+#blue { background: #6091b0; }

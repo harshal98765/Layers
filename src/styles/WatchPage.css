@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.watch-container {
+  background-color: #f8f8f8;
+  background-image: radial-gradient(circle at 50% 50%, rgba(0, 0, 255, 0.5) 2%, transparent 40%);
+  font-family: 'Russo One', sans-serif;
+  width: 100%;
+  max-width: 1650px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.watch-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.watch-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 130px;
+  line-height: 1.2;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.watch-showcase {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.watch-image1 {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transform: translateY(-20px);
+}
+
+.watch-cta {
+  margin-top: 20px;
+}
+
+.buy-button {
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 18px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.buy-button:hover {
+  background-color: #1e293b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.25);
+}
+
+.buy-button:active {
+  transform: translateY(0);
+}
+
+/* Tablet view */
+@media (max-width: 768px) {
+  .watch-container {
+    padding: 60px 16px;
+  }
+
+  .watch-heading {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    padding: 0 10px;
+  }
+
+  .watch-showcase {
+    margin-bottom: 40px;
+  }
+
+  .watch-image1 {
+    max-width: 100%;
+  }
+
+  .buy-button {
+    padding: 16px 32px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+  .watch-heading {
+    font-size: 1.7rem;
+    margin-bottom: 40px;
+  }
+
+  .buy-button {
+    width: 100%;
+    max-width: 300px;
+    font-size: 0.95rem;
+  }
+
+  .watch-showcase {
+    margin-bottom: 30px;
+  }
+
+  .watch-container {
+    padding: 40px 10px;
+  }
+}

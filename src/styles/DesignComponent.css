@@ -1,0 +1,190 @@
+.chaos-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  padding: 2rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* overflow-x: hidden; */
+}
+
+h1.chaos-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 15.5rem;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+  margin-left: -41rem;
+}
+
+p.chaos-text {
+  font-family: 'Russo One', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 100;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+  margin-top: -4rem;
+  transform: translateX(6rem);
+}
+
+.chaos-container {
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+}
+
+.quote-mark {
+  font-size: 3rem;
+  color: #333;
+  line-height: 1;
+  margin-top: -0.5rem;
+}
+
+.chaos-content {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  transform: translateX(-210px);
+}
+
+.signature {
+  margin-top: 1.4rem;
+  font-style: italic;
+  font-size: 1rem;
+  color: #666;
+  transform: translateX(6rem);
+}
+
+.image-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.chaos-image {
+  width: 550px;
+  height: 520px;
+  position: absolute;
+  left: -400px;
+  top: 40%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.Owner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -20rem;
+  transform: translateX(330px);
+}
+
+.OwnerPage {
+  object-fit: cover;
+  transform: scale(0.6) translateX(250px);
+}
+
+/* ✅ RESPONSIVENESS — ADDED ONLY MEDIA QUERIES WITHOUT CHANGING DESIGN */
+
+@media (max-width: 1024px) {
+  .chaos-image {
+    width: 400px;
+    height: auto;
+    left: -250px;
+  }
+
+  .Owner {
+    transform: translateX(180px);
+    margin-top: -14rem;
+  }
+
+  .OwnerPage {
+    transform: scale(0.6) translateX(100px);
+  }
+
+  h1.chaos-text {
+    font-size: 8rem;
+    margin-left: -20rem;
+  }
+
+  .chaos-content {
+    transform: translateX(-120px);
+  }
+
+  p.chaos-text {
+    transform: translateX(3rem);
+  }
+
+  .signature {
+    transform: translateX(3rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .chaos-container {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .chaos-image {
+    position: static;
+    width: 300px;
+    height: auto;
+    left: 0;
+    top: 0;
+    transform: none;
+  }
+
+  .Owner {
+    margin-top: 0;
+    transform: none;
+  }
+
+  .OwnerPage {
+    transform: scale(0.6);
+  }
+
+  h1.chaos-text {
+    font-size: 5rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .chaos-content {
+    transform: none;
+    text-align: center;
+  }
+
+  p.chaos-text {
+    font-size: 0.8rem;
+    transform: none;
+    text-align: center;
+  }
+
+  .signature {
+    font-size: 0.9rem;
+    transform: none;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h1.chaos-text {
+    font-size: 3.2rem;
+    transform: translateY(-5rem);
+  }
+
+  p.chaos-text {
+    font-size: 0.75rem;
+  }
+
+  .signature {
+    font-size: 0.8rem;
+  }
+}

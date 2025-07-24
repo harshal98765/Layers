@@ -1,0 +1,53 @@
+.circular-text {
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 170px;
+  height: 180px;
+  position: relative;
+  font-weight: 900;
+  color: #09126e;
+  text-align: center;
+  cursor: pointer;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+}
+
+.circular-text span {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 24px;
+  transition: all 0.5s cubic-bezier(0, 0, 0, 1);
+}
+
+/* ✅ Tablet view adjustments */
+@media (max-width: 768px) {
+  .circular-text {
+    width: 130px;
+    height: 140px;
+  }
+
+  .circular-text span {
+    font-size: 18px;
+  }
+}
+
+/* ✅ Mobile view: move to bottom-right corner */
+@media (max-width: 480px) {
+  .circular-text {
+    width: 100px;
+    height: 90px;
+    font-size: 14px;
+    /* position: fixed; */
+    bottom: -2px;
+    right: -85px;
+    z-index: 999;
+  }
+
+  .circular-text span {
+    font-size: 11px;
+  }
+}

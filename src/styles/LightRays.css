@@ -1,0 +1,16 @@
+.light-rays-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .light-rays-container {
+    z-index: 2; /* Adjust if needed to balance with mobile UI layers */
+  }
+}

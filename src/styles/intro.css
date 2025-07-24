@@ -1,0 +1,172 @@
+/* src/styles/intro.css */
+
+.body-intro {
+  overflow: hidden;
+  font-family: 'Russo One', sans-serif;
+}
+
+.intro-section2 {
+  height: 100vh;
+  background: transparent;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+
+}
+
+.intro-section2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgb(239, 233, 233),
+    rgb(145, 138, 138),
+    rgb(253, 254, 253),
+    #e4ecec,
+    rgb(198, 198, 196),
+    rgb(150, 158, 158)
+  );
+  mix-blend-mode: color;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bg-video1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  background-color: black;
+}
+
+
+.animated-heading {
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 5em;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 28px;
+  z-index: 2;
+  padding: 0 1rem;
+  word-break: break-word;
+}
+
+.animated-heading span {
+  display: inline-block;
+  opacity: 0;
+  animation: animate 1s linear forwards;
+  font-weight: 100;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotateY(90deg);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg);
+    filter: blur(0);
+  }
+}
+
+.be-ready-button {
+  position: absolute;
+  bottom: 10%;
+  z-index: 3;
+  padding: 10px 20px;
+  background-color: rgba(117, 167, 8, 0.984);
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.be-ready-button:hover {
+  background: black;
+  color: white;
+}
+
+.transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+@media (max-width: 1024px) {
+  .animated-heading {
+    font-size: 3.5em;
+    letter-spacing: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .animated-heading {
+    font-size: 2.5em;
+    letter-spacing: 12px;
+  }
+
+  .be-ready-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-heading {
+    font-size: 4.8em;
+    letter-spacing: 8px;
+  }
+
+  .be-ready-button {
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    bottom: 45%;
+  }
+}
+
+/* Wrapper around the LightRays to control z-index and positioning */
+.light-rays-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Behind text & button, above video */
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .light-rays-wrapper {
+    height: 100vh;
+  }
+}

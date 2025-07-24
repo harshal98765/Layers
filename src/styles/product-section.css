@@ -1,0 +1,398 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=Crimson+Text:wght@400;600&display=swap');
+
+/* Base section styling */
+
+
+.highlight-india {
+  color: #210978; /* Or any accent color you prefer */
+  font-family: 'Playfair Display', serif; /* Or a different font */
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  font-size: 45px;
+  display: inline-block;  
+  transform: translateY(-30px);
+  margin-top: -20px;
+  
+}
+
+.product-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Container and layout */
+.product-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+  width: 100%;
+}
+
+.product-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+  min-height: 70vh;
+}
+
+/* Text content styling - Left Side - LEFT ALIGNED */
+.text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: left; /* Force left alignment */
+  align-items: flex-start; /* Align items to the left */
+}
+
+.blur-text {
+  display: inline-block;
+  will-change: opacity, filter;
+}
+
+
+/* Main heading - both lines together */
+.main-heading {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1a1a1a;
+  margin: 0 0 24px 0;
+  /* font-family: 'Orbitron', sans-serif; */
+  font-family: 'Russo One', sans-serif;
+    /* font-family: 'Bebas Neue', sans-serif;  */
+  /* font-family: 'Oswald', sans-serif;  */
+  opacity: 0;
+  transform:translateX(80px);
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.truefocus-wrapper {
+  display: inline-block;
+  margin-top: -5px; /* Reduce top space before 'Made for India.' */
+  margin-left: 9px; /* Shift 'Made for India.' left */
+}
+
+/* Subtitle/paragraph styling */
+.subtitle {
+    
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #666666;
+  margin: 0;
+  font-weight: 400;
+  max-width: 500px; /* Increased from 400px */
+  font-family: 'Crimson Text', serif;
+  opacity: 0;
+  transform: translateY(-10px); /* or -15px, depending on how much lift you want */
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  
+}
+
+
+
+/* Decorative line */
+.decorative-line {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  align-self: flex-start; /* Align to the left */
+}
+
+.line {
+  width: 60px;
+  height: 2px;
+  background-color: #cccccc;
+}
+
+/* Image content styling - Right Side - LARGER SIZE */
+.image-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 700px; /* Increased from 500px */
+}
+
+.product-image {
+  width: 120%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.6s ease;
+  max-height: 800px; /* Added max height for better control */
+}
+
+.product-image:hover {
+  transform: scale(1.02);
+}
+
+/* Animation classes */
+.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.animate-in-right {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.delay-200 {
+  transition-delay: 0.2s;
+}
+
+.delay-300 {
+  transition-delay: 0.3s;
+}
+
+.delay-500 {
+  transition-delay: 0.5s;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .product-container {
+    padding: 0 40px;
+  }
+  
+  .product-content {
+    gap: 80px;
+  }
+  
+  .main-heading {
+    font-size: 5rem;
+  }
+  
+  .image-wrapper {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 968px) {
+  .product-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  /* Keep text left-aligned even on mobile */
+  .text-content {
+    text-align: left;
+    align-items: flex-start;
+  }
+  
+  .main-heading {
+    font-size: 4rem;
+    text-align: left;
+  }
+  
+  .subtitle {
+    max-width: 100%;
+    text-align: left;
+  }
+  
+  .image-wrapper {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-section {
+    padding: 60px 0;
+  }
+  
+  .product-container {
+    padding: 0 30px;
+  }
+  
+  .product-content {
+    gap: 40px;
+  }
+  
+  .text-content {
+    gap: 30px;
+    text-align: left; /* Maintain left alignment */
+  }
+  
+  .main-heading {
+    font-size: 3rem;
+    margin: 0 0 20px 0;
+    text-align: left;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+  
+  .image-wrapper {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-container {
+    padding: 0 20px;
+  }
+  
+  .product-content {
+    gap: 30px;
+  }
+  
+  .text-content {
+    gap: 25px;
+    text-align: left; /* Maintain left alignment */
+  }
+  
+  .main-heading {
+    font-size: 2.3rem;
+    margin: 0 0 16px 0;
+    text-align: left;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem;
+    max-width: 100%;
+    text-align: left;
+  }
+  
+  .line {
+    width: 40px;
+  }
+  
+  .image-wrapper {
+    max-width: 350px;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .main-heading,
+  .subtitle,
+  .decorative-line,
+  .image-content {
+    transition: opacity 0.3s ease;
+    transform: none !important;
+  }
+  
+  .product-image:hover {
+    transform: none;
+  }
+}
+
+/* Rotating CircularText only for ProductSection */
+.product-section .circular-text-product {
+  position: absolute;
+  top: 10px;
+  right: 110px;
+  width: 80px;
+  height: 80px;
+  z-index: 2;
+  /* animation: spin 20s linear infinite; */
+  pointer-events: none;
+  transform-origin: center center;
+}
+
+.product-section .circular-text-product:hover {
+  animation-duration: 5s; /* Speed up on hover */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Additional mobile-specific tweaks already included in original file */
+/* All existing CSS remains same */
+
+@media (max-width: 480px) {
+  .product-section {
+    padding: 120px 0;
+  }
+
+  .product-container {
+    padding: 0 16px;
+  }
+
+  .product-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .text-content {
+    gap: 25px;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .main-heading {
+    font-size: 2.5rem;
+    margin: -100px 0 14px 0;
+    text-align: left;
+    line-height: 1.1;
+  
+  }
+
+  .highlight-india {
+    font-size: 30px;
+    transform: translateY(-10px);
+    margin-top: 0;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    max-width: 100%;
+    text-align: left;
+    line-height: 1.6;
+  }
+
+  .line {
+    width: 30px;
+  }
+
+  .image-wrapper {
+    max-width: 300px;
+    width: 100%;
+  }
+
+  .product-image {
+    width: 120%;
+    max-height: 700px;
+    object-fit: contain;
+  }
+
+  .circular-text-product {
+    top: 10px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+  }
+}

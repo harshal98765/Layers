@@ -1,0 +1,873 @@
+/* Home.css - Enhanced Mobile Responsive Styles */
+.home-page-body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #000;
+  
+}
+
+.home-container {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%);
+  color: white;
+  position: relative;
+  font-family: "Russo One", sans-serif;
+}
+
+.transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Enhanced Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 14px 0; /* Increased padding for better visibility */
+  background: rgba(0, 0, 0, 0.95); /* Slightly more opaque */
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 43px; /* Ensure minimum height */
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 100%;
+}
+
+.navbar .nav-content .logo {
+  font-size: 30px;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  transform: translate(-90px, 5px);
+  font-family: "Orbitron", sans-serif;
+  color: #0066ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  transform: translateX(30px);
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #0066ff;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #0066ff;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Navigation Actions */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transform: translateX(80px);
+  flex-shrink: 0; /* Prevent nav actions from shrinking */
+}
+
+.nav-icon-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #0066ff;
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.cart-btn {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: #0066ff;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.buy-now-btn {
+  background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%);
+  border: none;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: white;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.buy-now-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.buy-now-btn:hover::before {
+  left: 100%;
+}
+
+.mobile-menu-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #0066ff;
+}
+
+/* Search Bar */
+.search-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.search-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 20px;
+}
+
+.search-input-container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  padding: 12px 16px 12px 48px;
+  color: white;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-input:focus {
+  border-color: #0066ff;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.2);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.mobile-menu-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobile-nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  padding: 8px 0;
+}
+
+.mobile-nav-link:hover {
+  color: #0066ff;
+}
+
+.mobile-buy-btn {
+  background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%);
+  border: none;
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: white;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 104px 40px 40px;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin-bottom: 60px;
+  z-index: 2;
+}
+
+.hero-subtitle {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, #ffffff 0%, #0066ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%);
+  border: none;
+  padding: 13px 25px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+/* Watch Display */
+.watch-display {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+.watch-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(0, 102, 255, 0.3) 0%, transparent 80%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Watch Image Styles */
+.watch-image-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+.watch-image {
+  width: 920px;
+  height: 920px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(0, 102, 255, 0.425));
+  transition: transform 0.1s ease-out;
+  transform: translateY(-220px);
+}
+
+/* Watch Labels with Dotted Lines */
+.watch-label {
+  z-index: 10;
+}
+
+.label-pointer-line {
+  position: absolute;
+  z-index: 5;
+}
+
+.label-content {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 102, 255, 0.3);
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 20px rgba(0, 102, 255, 0.2);
+  position: relative;
+  z-index: 10;
+}
+
+.label-title {
+  color: #0066ff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.label-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.label-line {
+  position: absolute;
+  height: 2px;
+  width: 50px;
+  background: linear-gradient(90deg, #00f0ff, #0066ff, #00f0ff, #ffffff);
+  background-size: 200% 100%;
+  animation: flowLine 2s linear infinite;
+  box-shadow: 0 0 8px #00f0ff, 0 0 12px #0066ff;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 2px;
+}
+
+/* Right side */
+.watch-label.right .label-line {
+  left: -60px;
+}
+
+/* Left side */
+.watch-label.left .label-line {
+  right: -60px;
+  top: 40%;
+}
+
+@keyframes flowLine {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Enhanced light rays for better visibility */
+.light-ray {
+  box-shadow: 0 0 5px rgba(0, 102, 255, 0.3);
+  border-radius: 1px;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* .scroll-line {
+  width: 2px;
+  height: 30px;
+  background: linear-gradient(to bottom, #0066ff, transparent);
+} */
+
+/* Enhanced Responsive Design */
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 1200px) {
+  .nav-actions {
+    transform: translateX(40px);
+  }
+
+  .nav-links {
+    transform: translateX(0);
+    gap: 30px;
+  }
+
+  .logo {
+    transform: translate(-40px, 5px);
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 12px 0; /* Ensure adequate padding */
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .buy-now-btn {
+    display: none;
+  }
+
+  .nav-actions {
+    transform: translateX(0);
+  }
+
+  .logo {
+    transform: translate(0, 0); /* Reset transform for better positioning */
+    font-size: 28px;
+  }
+
+  .watch-display {
+    width: 300px; /* Reduced from 350px */
+    height: 300px;
+  }
+
+  .watch-image {
+    width: 650px; /* Reduced from 800px */
+    height: 650px;
+    transform: translateY(-170px);
+  }
+
+  .watch-label.right {
+    right: -180px !important;
+  }
+
+  .watch-label.left {
+    left: -180px !important;
+  }
+
+  .label-content {
+    padding: 10px 14px;
+  }
+
+  .label-title {
+    font-size: 13px;
+  }
+
+  .label-description {
+    font-size: 11px;
+  }
+}
+
+/* Mobile Landscape */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 0; /* Maintain navbar visibility */
+    background: rgba(0, 0, 0, 0.98); /* More opaque for better visibility */
+  }
+
+  .nav-content {
+    padding: 0 15px;
+  }
+
+  .logo {
+    transform: translate(0, 0); /* Keep logo properly positioned */
+    font-size: 26px;
+  }
+
+  .nav-actions {
+    gap: 12px;
+    transform: translateX(0); /* Keep nav-actions on right */
+  }
+
+  .hero-section {
+    padding: 120px 20px 40px; /* Increased top padding to account for navbar */
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 25px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    margin-bottom: 35px;
+  }
+
+  .hero-subtitle {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+  }
+
+  .watch-display {
+    width: 280px; /* Reduced from 320px */
+    height: 280px;
+  }
+
+  .watch-image {
+    width: 580px; /* Reduced from 720px */
+    height: 580px;
+    transform: translateY(-150px);
+  }
+
+  .watch-label.right {
+    right: -160px !important;
+  }
+
+  .watch-label.left {
+    left: -160px !important;
+  }
+
+  .label-line {
+    width: 40px;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px 0; /* Maintain navbar visibility */
+    background: rgba(0, 0, 0, 0.98); /* Ensure visibility */
+    min-height: 50px; /* Minimum height for mobile */
+  }
+
+  .nav-content {
+    padding: 0 85px;
+  }
+
+  .logo {
+    transform: translate(-58px, 0); /* Keep logo properly positioned */
+    font-size: 10px;
+  }
+
+  .nav-actions {
+    gap: 5px;
+    transform: translateX(0); /* Nav actions stay on right */
+  }
+
+  .nav-icon-btn {
+    padding: 6px;
+  }
+
+  .nav-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .hero-section {
+    padding: 20px 25px 30px; /* Proper top padding to avoid navbar overlap */
+  }
+
+  .hero-content {
+    margin-bottom: 40px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 10vw, 2.5rem);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+
+  .hero-subtitle {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+  }
+
+  .watch-display {
+    width: 250px; /* Reduced from 280px */
+    height: 250px;
+  }
+
+  .watch-image {
+    width: 480px; /* Reduced from 620px */
+    height: 480px;
+    transform: translateY(-130px);
+  }
+
+  .watch-glow {
+    width: 200px; /* Reduced from 250px */
+    height: 250px;
+  }
+
+  /* Hide watch labels on very small screens or make them smaller */
+  .watch-label {
+    display: none;
+  }
+
+  .cta-button {
+    padding: 11px 22px;
+    font-size: 12px;
+  }
+
+  .scroll-indicator {
+    bottom: 30px;
+  }
+
+  .scroll-line {
+    height: 25px;
+  }
+
+  /* Mobile menu adjustments */
+  .mobile-menu-content {
+    padding: 15px 20px;
+    gap: 12px;
+  }
+
+  .mobile-nav-link {
+    font-size: 15px;
+    padding: 6px 0;
+  }
+
+  .mobile-buy-btn {
+    padding: 12px 20px;
+    font-size: 13px;
+    margin-top: 6px;
+  }
+
+  /* Search input mobile optimization */
+  .search-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 10px 14px 10px 44px;
+  }
+
+  .search-input::placeholder {
+    font-size: 14px;
+  }
+}
+
+/* Extra Small Mobile Devices */
+@media (max-width: 360px) {
+  .navbar {
+    padding: 8px 0;
+    background: rgba(0, 0, 0, 0.98);
+    min-height: 50px;
+  }
+
+  .nav-content {
+    padding: 0 10px;
+  }
+
+  .logo {
+    font-size: 22px;
+    transform: translate(0, 0); /* Logo stays properly positioned */
+  }
+
+  .nav-actions {
+    gap: 6px;
+  }
+
+  .hero-section {
+    padding: 90px 10px 30px; /* Adequate top padding */
+  }
+
+  .hero-title {
+    font-size: clamp(1.6rem, 12vw, 2.2rem);
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .watch-display {
+    width: 220px; /* Reduced from 250px */
+    height: 220px;
+  }
+
+  .watch-image {
+    width: 420px; /* Reduced from 550px */
+    height: 420px;
+    transform: translateY(-110px);
+  }
+
+  .watch-glow {
+    width: 180px; /* Reduced from 200px */
+    height: 220px;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 11px;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0066ff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0052cc;
+}
+
+/* Ensure smooth transitions on all interactive elements */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+  .nav-icon-btn {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-menu-btn {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cta-button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
