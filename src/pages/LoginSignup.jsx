@@ -1,6 +1,6 @@
 // src/components/LoginSignup.jsx
 import React, { useState,useEffect } from "react";
-import "../styles/loginSignup.css";
+import "../styles/LoginSignup.css";
 import Navbar from "./navbar"
 
 const LoginSignup = () => {

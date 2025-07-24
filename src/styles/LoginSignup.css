@@ -45,9 +45,9 @@
 
 .login-box {
   position: absolute;
-  width: 310px;
+  width: 270px;
   background: #1f293a;
-  transform: translateX(-21%);
+  transform: translateX(-35%);
 }
 
 .login-box form {
