@@ -3,7 +3,7 @@ import c1 from '../assets/c1.png';
 import c2 from '../assets/c2.jpg';
 import c3 from '../assets/c3.jpg';
 import GQ from '../assets/GQ_Logo.png';
-import VOGUE from '../assets/VOGUE_Logo.png';
+import VOGUE from '../assets/Vogue_Logo.png';
 
 function App() {
   return (
